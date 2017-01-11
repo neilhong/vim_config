@@ -69,6 +69,19 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'hynek/vim-python-pep8-indent'
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" 在 vim 启动的时候默认开启 NERDTree（autocmd 可以缩写为 au）
+autocmd VimEnter * NERDTree
+
+" 按下 F2 调出/隐藏 NERDTree
+map <F2> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
+
+" 当打开 NERDTree 窗口时，自动显示 Bookmarks
+let NERDTreeShowBookmarks=1

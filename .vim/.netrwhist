@@ -1,10 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/home/neil/workspace/blackhole/modules/utils'
-let g:netrw_dirhist_2='/home/neil/workspace/blackhole/modules'
-let g:netrw_dirhist_3='/home/neil/workspace/blackhole'
-let g:netrw_dirhist_4='/home/neil/workspace/blackhole/config'
-let g:netrw_dirhist_5='/home/neil/workspace/blackhole/modules'
-let g:netrw_dirhist_6='/home/neil/workspace/blackhole/modules/server'
-let g:netrw_dirhist_7='/home/neil/workspace/blackhole/modules'
-let g:netrw_dirhist_8='/home/neil/workspace/blackhole/modules/server'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/neil/.vim/plugin'
+let g:netrw_dirhist_2='/home/neil/.vim'
+let g:netrw_dirhist_3='/home/neil'
