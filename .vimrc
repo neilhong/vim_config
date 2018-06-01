@@ -13,7 +13,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
-set et
+set noet
 set incsearch
 set hlsearch
 
@@ -27,6 +27,10 @@ set ts=4
 
 filetype indent on
 autocmd FileType python setlocal et sta sw=4 sts=4
+
+set sw=4
+set sts=4
+set ts=4
 
 "let &colorcolumn=80
 "highlight ColorColumn ctermbg=Yellow
@@ -59,11 +63,10 @@ autocmd bufnewfile *.py exe "1," . 10 . "g/@contact:.*/s//@contact:     gzhongze
 autocmd bufnewfile *.py exe "1," . 10 . "g/@date:.*/s//@date:        " .strftime("%Y-%m-%d %H:%M:%S")
 
 autocmd bufnewfile *.go so /home/neil/.vim_header_go
-autocmd bufnewfile *.go exe "1," . 9 . "g/FileName:.*/s//FileName:     " .expand("%")
-autocmd bufnewfile *.go exe "1," . 9 . "g/Author:.*/s//Author:       neilhong"
-autocmd bufnewfile *.go exe "1," . 9 . "g/@contact:.*/s//@contact:     gzhongzenglin@corp.netease.com"
-autocmd bufnewfile *.go exe "1," . 9 . "g/@date:.*/s//@date:        " .strftime("%Y-%m-%d %H:%M:%S")
-
+autocmd bufnewfile *.go exe "2" . "g/FileName:.*/s//FileName:     " .expand("%")
+autocmd bufnewfile *.go exe "2," . 9 . "g/Author:.*/s//Author:       neilhong"
+autocmd bufnewfile *.go exe "2," . 9 . "g/@contact:.*/s//@contact:     gzhongzenglin@corp.netease.com"
+autocmd bufnewfile *.go exe "2," . 9 . "g/@date:.*/s//@date:        " .strftime("%Y-%m-%d %H:%M:%S")
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -117,5 +120,9 @@ let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
-autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+let g:go_fmt_autosave = 1
+let g:go_fmt_command = "goimports"
 
+
+au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
+set completefunc=emoji#complete

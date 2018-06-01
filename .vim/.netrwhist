@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/neil/.vim/plugin'
-let g:netrw_dirhist_2='/home/neil/.vim'
-let g:netrw_dirhist_3='/home/neil'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/neil/workspace/mkdocs-material/src/assets'
+let g:netrw_dirhist_2='/home/neil/workspace/mkdocs-material/src'
+let g:netrw_dirhist_3='/home/neil/workspace/mkdocs-material/src/assets/javascripts'
+let g:netrw_dirhist_4='/home/neil/workspace/mkdocs-material/src/assets/javascripts/components'
+let g:netrw_dirhist_5='/home/neil/workspace/mkdocs-material/src/assets/javascripts/components/Material'
