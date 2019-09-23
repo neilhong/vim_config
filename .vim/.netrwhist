@@ -1,7 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/neil/workspace/mkdocs-material/src/assets'
-let g:netrw_dirhist_2='/home/neil/workspace/mkdocs-material/src'
-let g:netrw_dirhist_3='/home/neil/workspace/mkdocs-material/src/assets/javascripts'
-let g:netrw_dirhist_4='/home/neil/workspace/mkdocs-material/src/assets/javascripts/components'
-let g:netrw_dirhist_5='/home/neil/workspace/mkdocs-material/src/assets/javascripts/components/Material'
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/Neil/PycharmProjects/tmax-server/tmax/utils'
+let g:netrw_dirhist_2='/Users/Neil/PycharmProjects/gzailab-scripts'
+let g:netrw_dirhist_3='/Users/Neil/PycharmProjects'
+let g:netrw_dirhist_4='/Users/Neil/PycharmProjects/gzailab'
+let g:netrw_dirhist_5='/Users/Neil/PycharmProjects/gzailab/common'
+let g:netrw_dirhist_6='/Users/Neil/PycharmProjects/gzailab'
+let g:netrw_dirhist_7='/Users/Neil/PycharmProjects/gzailab/sym'

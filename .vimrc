@@ -25,6 +25,8 @@ set linebreak
 set sw=4
 set ts=4
 
+set autowriteall
+
 filetype indent on
 autocmd FileType python setlocal et sta sw=4 sts=4
 
@@ -32,8 +34,8 @@ set sw=4
 set sts=4
 set ts=4
 
-"let &colorcolumn=80
-"highlight ColorColumn ctermbg=Yellow
+let &colorcolumn=100
+highlight ColorColumn ctermbg=Yellow
 
 " 下面的颜色(darkgreen)可以自己修改
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
@@ -56,13 +58,13 @@ endfunction
 
 autocmd BufWritePre * :%s/\s\+$//e
 
-autocmd bufnewfile *.py so /home/neil/.vim_header_py
+autocmd bufnewfile *.py so /Users/Neil/.vim_header_py
 autocmd bufnewfile *.py exe "1," . 10 . "g/FileName:.*/s//FileName:     " .expand("%")
 autocmd bufnewfile *.py exe "1," . 10 . "g/Author:.*/s//Author:       neilhong"
 autocmd bufnewfile *.py exe "1," . 10 . "g/@contact:.*/s//@contact:     gzhongzenglin@corp.netease.com"
 autocmd bufnewfile *.py exe "1," . 10 . "g/@date:.*/s//@date:        " .strftime("%Y-%m-%d %H:%M:%S")
 
-autocmd bufnewfile *.go so /home/neil/.vim_header_go
+autocmd bufnewfile *.go so /Users/Neil/.vim_header_go
 autocmd bufnewfile *.go exe "2" . "g/FileName:.*/s//FileName:     " .expand("%")
 autocmd bufnewfile *.go exe "2," . 9 . "g/Author:.*/s//Author:       neilhong"
 autocmd bufnewfile *.go exe "2," . 9 . "g/@contact:.*/s//@contact:     gzhongzenglin@corp.netease.com"
@@ -89,7 +91,7 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " 在 vim 启动的时候默认开启 NERDTree（autocmd 可以缩写为 au）
-" autocmd VimEnter * NERDTree
+autocmd VimEnter * NERDTree
 
 " 按下 F2 调出/隐藏 NERDTree
 map <F2> :NERDTreeToggle<CR>
@@ -113,6 +115,11 @@ function! s:build_go_files()
   endif
 endfunction
 
+" add yaml stuffs
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+
 autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
 autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
@@ -122,6 +129,10 @@ let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_fmt_autosave = 1
 let g:go_fmt_command = "goimports"
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+let g:go_metalinter_deadline = "5s"
 
 
 au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
